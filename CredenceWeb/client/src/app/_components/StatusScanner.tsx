@@ -35,10 +35,10 @@ export default function StatusScanner() {
   });
 
   const updateStatus = (
-    name: ethers.Overrides,
-    desc: ethers.Overrides,
-    lat: ethers.Overrides,
-    long: ethers.Overrides,
+    name: String,
+    desc: String,
+    lat: String,
+    long: String,
   ) => {
     const provider: AlchemyProvider = new AlchemyProvider(
       "maticmum",
@@ -101,12 +101,14 @@ export default function StatusScanner() {
       //   const long = pos.coords.longitude;
       // });
 
-      updateStatus(
-        cData.text,
-        message,
-        pos.latitude.toString(),
-        pos.longitude.toString(),
-      );
+      if (pos.latitude && pos.longitude) {
+        updateStatus(
+          cData.text,
+          message,
+          pos.latitude.toString(),
+          pos.longitude.toString(),
+        );
+      }
     }
   };
 
