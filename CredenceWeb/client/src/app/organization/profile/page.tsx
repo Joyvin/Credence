@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "../../_components/Navbar";
 import Portfolio from "../../_components/Portfolio";
 import GenerateQR from "../../_components/GenerateQR";
