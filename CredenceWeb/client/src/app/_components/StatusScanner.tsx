@@ -35,10 +35,10 @@ export default function StatusScanner() {
   });
 
   const updateStatus = (
-    name: String,
-    desc: String,
-    lat: String,
-    long: String,
+    name: string,
+    desc: string,
+    lat: string,
+    long: string,
   ) => {
     const provider: AlchemyProvider = new AlchemyProvider(
       "maticmum",
