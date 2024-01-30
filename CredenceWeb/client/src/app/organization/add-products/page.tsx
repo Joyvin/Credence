@@ -1,4 +1,3 @@
-"use client";
 import AddProducts from "../../_components/AddProducts";
 import Navbar from "../../_components/Navbar";
 

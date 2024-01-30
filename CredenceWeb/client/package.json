@@ -7,10 +7,15 @@
     "build": "next build",
     "db:push": "prisma db push",
     "db:studio": "prisma studio",
-    "dev": "next dev --turbo",
+    "dev": "next dev",
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start"
+  },
+  "browser": {
+    "fs": false,
+    "path": false,
+    "os": false
   },
   "dependencies": {
     "@azure/storage-blob": "^12.17.0",
