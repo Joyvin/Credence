@@ -21,6 +21,7 @@ type PositionState = {
 
 export default function StatusScanner() {
   const [data, setData] = useState<string>();
+  const [scanned, setScanned] = useState(false);
   const item = {
     v: "vehicle",
     w: "warehouse",
@@ -81,7 +82,8 @@ export default function StatusScanner() {
   }, []);
 
   const handleScan = (cData: scanData) => {
-    if (cData) {
+    if (cData && !scanned) {
+      setScanned(true);
       const [type, id] = cData.text.split("#");
       console.log(cData.text);
       const message = type == "p" ? "Product created" : type == "w";
@@ -92,7 +94,12 @@ export default function StatusScanner() {
       //   const long = pos.coords.longitude;
       // });
 
-      // updateStatus(cData.text, message, lat.toString(), long.toString());
+      updateStatus(
+        cData.text,
+        message,
+        pos.latitude.toString(),
+        pos.longitude.toString(),
+      );
     }
   };
 
