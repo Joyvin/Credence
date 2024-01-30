@@ -86,7 +86,14 @@ export default function StatusScanner() {
       setScanned(true);
       const [type, id] = cData.text.split("#");
       console.log(cData.text);
-      const message = type == "p" ? "Product created" : type == "w";
+      const message =
+        type == "p"
+          ? "Product created"
+          : type == "w"
+            ? "Moved to warehouse"
+            : type == "v"
+              ? "Loaded in the vehicle"
+              : "On the way";
 
       // navigator.geolocation.getCurrentPosition(async function (position: PositionState) {
       //   const pos = position;
